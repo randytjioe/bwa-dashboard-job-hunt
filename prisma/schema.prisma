@@ -7,18 +7,18 @@ datasource db {
     url = env("DATABASE_URL")
 }
 
-model CategoryJob{
+model CategoryJob {
     id      String @id @default(cuid())
     name    String
     Job     Job[]
 }
 
-model Industry{
+model Industry {
     id      String @id @default(cuid())
     name    String
 }
 
-model Company{
+model Company {
     id          String @id @default(cuid())
     name        String
     password    String
@@ -29,7 +29,7 @@ model Company{
     Job Job[]
 }
 
-model CompanySocialMedia{
+model CompanySocialMedia {
     id          String @id @default(cuid())
     instagram   String
     twitter     String
@@ -40,7 +40,7 @@ model CompanySocialMedia{
     Company     Company? @relation(fields: [companyId], references:[id])
 }
 
-model CompanyTeam{
+model CompanyTeam {
     id          String @id @default(cuid())
     name        String
     position    String
@@ -50,7 +50,7 @@ model CompanyTeam{
     Company     Company? @relation(fields: [companyId], references:[id])
 }
 
-model CompanyOverview{
+model CompanyOverview {
     id          String @id @default(cuid())
     image       String
     website     String
@@ -65,7 +65,7 @@ model CompanyOverview{
     Company     Company? @relation(fields: [companyId], references:[id])
 }
 
-model Job{
+model Job {
     id              String @id @default(cuid())
     roles           String
     datePosted      DateTime @default(now())
@@ -85,6 +85,7 @@ model Job{
     categoryId      String?
     CategoryJob     CategoryJob? @relation(fields: [categoryId], references:[id])
     Company         Company? @relation(fields: [companyId], references:[id])
+    applicant       Applicant[]
 }   
 
 model User {
@@ -96,15 +97,15 @@ model User {
 }
 
 model Applicant {
-    id          String @id @default(cuid())
-    userId        String?
-    user    User? @relation(fields:[userId], references:[id])
-    jobId       String?
-    job    Job? @relation(fields:[jobId], references:[jobId])
-    previousJobTitle String
-    phone   String
-    linkedin String
-    portfolio String
-    coverLetter String
-    resume  String
+    id                  String @id @default(cuid())
+    userId              String?
+    user                User? @relation(fields:[userId], references:[id])
+    jobId               String?
+    job                 Job? @relation(fields:[jobId], references:[id])
+    previousJobTitle    String
+    phone               String
+    linkedIn            String
+    portfolio           String
+    coverLetter         String
+    resume              String
 }
