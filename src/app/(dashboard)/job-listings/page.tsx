@@ -20,6 +20,7 @@ import { dateFormat } from "@/lib/utils";
 import moment from "moment";
 
 interface JobListingsPageProps {}
+export const revalidate = 0;
 async function getDataJobs() {
   const session = await getServerSession(authOptions);
   const jobs = prisma.job.findMany({

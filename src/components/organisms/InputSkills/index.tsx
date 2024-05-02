@@ -9,7 +9,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { UseFormReturn } from "react-hook-form";
 import FieldInput from "../FieldInput";
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { jobFormSchema } from "@/lib/form-schema";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
@@ -42,6 +42,13 @@ const InputSkills: FC<InputSkillsProps> = ({ form, name, label }) => {
     setValues(skills);
     form.setValue(name, skills);
   };
+
+  useEffect(() => {
+    const val = form.getValues(name);
+    if (val && val.length > 0) {
+      setValues(val);
+    }
+  }, [form, name]);
 
   return (
     <FormField

@@ -97,7 +97,7 @@ model User {
 }
 
 model Applicant {
-    id                  String @id @default(cuid())
+    id                  String  @id @default(cuid())
     userId              String?
     user                User? @relation(fields:[userId], references:[id])
     jobId               String?

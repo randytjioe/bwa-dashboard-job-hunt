@@ -16,7 +16,6 @@ import {
   JOB_LISTING_DATA,
 } from "@/constants";
 import ButtonActionTable from "../ButtonActionTable";
-import { Applicant } from "@prisma/client";
 interface ApplicantProps {
   applicants: any;
 }
@@ -40,7 +39,7 @@ const Applicants: FC<ApplicantProps> = ({ applicants }) => {
                 <TableCell>{item.user.name}</TableCell>
 
                 <TableCell>
-                  <ButtonActionTable url="/job-detail/1" />
+                  <ButtonActionTable url={`/job-detail/${item.id}`} />
                 </TableCell>
               </TableRow>
             ))}
