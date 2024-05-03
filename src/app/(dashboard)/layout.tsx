@@ -5,7 +5,7 @@ import Sidebar from "@/components/layouts/Sidebar";
 import Header from "@/components/layouts/Header";
 import NextAuthProvider from "@/context/NextAuthProvider";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 import { redirect } from "next/navigation";
 import { Toaster } from "@/components/ui/toaster";
 

@@ -14,10 +14,11 @@ import { Button } from "@/components/ui/button";
 import { MoreVertical } from "lucide-react";
 import ButtonActionTable from "@/components/organisms/ButtonActionTable";
 import prisma from "../../../../lib/prisma";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
 import { dateFormat } from "@/lib/utils";
 import moment from "moment";
+import { Job } from "@prisma/client";
 
 interface JobListingsPageProps {}
 export const revalidate = 0;

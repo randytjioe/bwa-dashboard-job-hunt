@@ -1,5 +1,4 @@
 "use client";
-import FieldInput from "@/components/organisms/FieldInput";
 import { FC } from "react";
 import {
   Dialog,
@@ -18,7 +17,6 @@ import { Separator } from "@/components/ui/separator";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -31,7 +29,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 interface DialogAddTeamProps {}
 
-const DialogAddTeam: FC<TeamFormProps> = ({}) => {
+const DialogAddTeam: FC<DialogAddTeamProps> = ({}) => {
   const form = useForm<z.infer<typeof teamFormSchema>>({
     resolver: zodResolver(teamFormSchema),
   });

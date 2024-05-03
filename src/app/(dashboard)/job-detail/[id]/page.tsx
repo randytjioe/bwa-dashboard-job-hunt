@@ -5,8 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Applicants from "@/components/organisms/Applicants";
 import JobDetail from "@/components/organisms/JobDetail";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import prisma from "../../../../../lib/prisma";
+import { authOptions } from "@/lib/authOptions";
 
 type paramsType = {
   id: string;

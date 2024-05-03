@@ -1,11 +1,10 @@
-
 import { Epilogue } from "next/font/google";
 import "../globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import React from "react";
+import { authOptions } from "@/lib/authOptions";
 
 const epilogue = Epilogue({ subsets: ["latin"] });
 

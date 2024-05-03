@@ -20,7 +20,7 @@ const TeamForm: FC<TeamFormProps> = ({ teams }) => {
           <DialogAddTeam />
         </div>
         <div className="grid grid-cols-3 gap-5 mt-6">
-          {teams.map((item: CompanyTeam) => (
+          {teams?.map((item: CompanyTeam) => (
             <div key={item.id} className="p-3 shadow text-center">
               <div className="w-14 h-14 rounded-full bg-gray-300 mx-auto" />
               <div className="font-semibold mt-4">{item.name}</div>
